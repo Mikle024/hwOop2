@@ -1,8 +1,8 @@
 package ru.netology.qa.service;
 
 public class Radio {
-    public int currentRadioStationNumber;
-    public int currentVolume;
+    private int currentRadioStationNumber;
+    private int currentVolume;
 
     public int getCurrentRadioStationNumber() {
         return currentRadioStationNumber;
