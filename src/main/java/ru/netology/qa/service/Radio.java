@@ -1,5 +1,13 @@
 package ru.netology.qa.service;
 
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.NoArgsConstructor;
+
+@NoArgsConstructor
+@AllArgsConstructor
+@Data
+
 public class Radio {
     private int minRadioStationNumber;
     private int maxRadioStationNumber = 9;
@@ -8,45 +16,8 @@ public class Radio {
     private int minVolume;
     private int maxVolume = 100;
     private int currentVolume = minVolume;
-    public Radio() {
-
-    }
-
     public Radio(int quantityRadioStation) {
         this.maxRadioStationNumber = minRadioStationNumber + (quantityRadioStation - 1);
-    }
-    public int getMinRadioStationNumber() {
-        return minRadioStationNumber;
-    }
-    public int getMaxRadioStationNumber() {
-        return maxRadioStationNumber;
-    }
-    public int getMinVolume() {
-        return minVolume;
-    }
-
-    public int getMaxVolume() {
-        return maxVolume;
-    }
-
-
-    public int getCurrentRadioStationNumber() {
-
-        return currentRadioStationNumber;
-    }
-
-    public void setCurrentRadioStationNumber(int newCurrentRadioStationNumber) {
-        if (newCurrentRadioStationNumber < minRadioStationNumber) {
-            return;
-        }
-        if (newCurrentRadioStationNumber > maxRadioStationNumber) {
-            return;
-        }
-        currentRadioStationNumber = newCurrentRadioStationNumber;
-    }
-
-    public int getCurrentVolume() {
-        return currentVolume;
     }
 
     public void setCurrentVolume(int newCurrentVolume) {
@@ -57,6 +28,16 @@ public class Radio {
             return;
         }
         currentVolume = newCurrentVolume;
+    }
+
+    public void setCurrentRadioStationNumber(int newCurrentRadioStationNumber) {
+        if (newCurrentRadioStationNumber < minRadioStationNumber) {
+            return;
+        }
+        if (newCurrentRadioStationNumber > maxRadioStationNumber) {
+            return;
+        }
+        currentRadioStationNumber = newCurrentRadioStationNumber;
     }
 
     public void next() {
@@ -90,6 +71,4 @@ public class Radio {
             currentVolume = minVolume;
         }
     }
-
-
 }
